@@ -13,32 +13,43 @@ class OrderInfolist
         return $schema
             ->components([
                 TextEntry::make('user.name')
-                    ->label('User'),
-                TextEntry::make('order_number'),
+                    ->label(__('User')),
+                TextEntry::make('order_number')
+                    ->label(__('Order number')),
                 TextEntry::make('total_amount')
-                    ->numeric(),
-                TextEntry::make('payment_method'),
-                TextEntry::make('payment_status'),
+                    ->numeric()
+                    ->label(__('Total amount')),
+                TextEntry::make('payment_method')
+                    ->label(__('Payment method')),
+                TextEntry::make('payment_status')
+                    ->label(__('Payment status')),
                 TextEntry::make('payment_id')
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Payment id')),
                 ImageEntry::make('payment_qr_code_image')
                     ->placeholder('-')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Payment qr code image')),
                 TextEntry::make('payment_qr_code_payload')
                     ->placeholder('-')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Payment qr code payload')),
                 TextEntry::make('payment_qr_code_expiration_date')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Payment qr code expiration date')),
                 TextEntry::make('paid_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Paid at')),
                 TextEntry::make('created_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Created at')),
                 TextEntry::make('updated_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Updated at')),
             ]);
     }
 }

@@ -13,12 +13,16 @@ class SpeakerForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
+                    ->required()
+                    ->label(__('Name')),
                 Textarea::make('bio')
-                    ->columnSpanFull(),
-                TextInput::make('photo'),
+                    ->columnSpanFull()
+                    ->label(__('Bio')),
+                TextInput::make('photo')
+                    ->label(__('Photo')),
                 Textarea::make('social_links')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Social links')),
             ]);
     }
 }

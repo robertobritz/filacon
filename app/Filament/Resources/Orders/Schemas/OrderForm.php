@@ -16,24 +16,34 @@ class OrderForm
             ->components([
                 Select::make('user_id')
                     ->relationship('user', 'name')
-                    ->required(),
+                    ->required()
+                    ->label(__('User id')),
                 TextInput::make('order_number')
-                    ->required(),
+                    ->required()
+                    ->label(__('Order number')),
                 TextInput::make('total_amount')
                     ->required()
-                    ->numeric(),
+                    ->numeric()
+                    ->label(__('Total amount')),
                 TextInput::make('payment_method')
-                    ->required(),
+                    ->required()
+                    ->label(__('Payment method')),
                 TextInput::make('payment_status')
                     ->required()
-                    ->default('pending'),
-                TextInput::make('payment_id'),
+                    ->default('pending')
+                    ->label(__('Payment status')),
+                TextInput::make('payment_id')
+                    ->label(__('Payment id')),
                 Textarea::make('payment_qr_code_image')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Payment qr code image')),
                 Textarea::make('payment_qr_code_payload')
-                    ->columnSpanFull(),
-                DateTimePicker::make('payment_qr_code_expiration_date'),
-                DateTimePicker::make('paid_at'),
+                    ->columnSpanFull()
+                    ->label(__('Payment qr code payload')),
+                DateTimePicker::make('payment_qr_code_expiration_date')
+                    ->label(__('Payment qr code expiration date')),
+                DateTimePicker::make('paid_at')
+                    ->label(__('Paid at')),
             ]);
     }
 }

@@ -16,28 +16,37 @@ class TicketForm
             ->components([
                 Select::make('event_id')
                     ->relationship('event', 'name')
-                    ->required(),
+                    ->required()
+                    ->label(__('Event id')),
                 TextInput::make('name')
-                    ->required(),
+                    ->required()
+                    ->label(__('Name')),
                 Textarea::make('description')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Description')),
                 TextInput::make('price')
                     ->required()
                     ->numeric()
-                    ->prefix('$'),
+                    ->prefix('$')
+                    ->label(__('Price')),
                 TextInput::make('stock')
                     ->required()
-                    ->numeric(),
+                    ->numeric()
+                    ->label(__('Stock')),
                 Textarea::make('benefits')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Benefits')),
                 TextInput::make('sort')
                     ->required()
                     ->numeric()
-                    ->default(0),
+                    ->default(0)
+                    ->label(__('Sort')),
                 Toggle::make('vip')
-                    ->required(),
+                    ->required()
+                    ->label(__('Vip')),
                 Toggle::make('active')
-                    ->required(),
+                    ->required()
+                    ->label(__('Active')),
             ]);
     }
 }

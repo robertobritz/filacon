@@ -16,32 +16,42 @@ class OrdersTable
         return $table
             ->columns([
                 TextColumn::make('user.name')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('User')),
                 TextColumn::make('order_number')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Order number')),
                 TextColumn::make('total_amount')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->label(__('Total amount')),
                 TextColumn::make('payment_method')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Payment method')),
                 TextColumn::make('payment_status')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Payment status')),
                 TextColumn::make('payment_id')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Payment id')),
                 TextColumn::make('payment_qr_code_expiration_date')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->label(__('Payment qr code expiration date')),
                 TextColumn::make('paid_at')
                     ->dateTime()
-                    ->sortable(),
+                    ->sortable()
+                    ->label(__('Paid at')),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('Created at')),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('Updated at')),
             ])
             ->filters([
                 //

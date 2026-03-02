@@ -17,30 +17,39 @@ class TicketsTable
         return $table
             ->columns([
                 TextColumn::make('event.name')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Event')),
                 TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Name')),
                 TextColumn::make('price')
                     ->money()
-                    ->sortable(),
+                    ->sortable()
+                    ->label(__('Price')),
                 TextColumn::make('stock')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->label(__('Stock')),
                 TextColumn::make('sort')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                    ->label(__('Sort')),
                 IconColumn::make('vip')
-                    ->boolean(),
+                    ->boolean()
+                    ->label(__('Vip')),
                 IconColumn::make('active')
-                    ->boolean(),
+                    ->boolean()
+                    ->label(__('Active')),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('Created at')),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('Updated at')),
             ])
             ->filters([
                 //

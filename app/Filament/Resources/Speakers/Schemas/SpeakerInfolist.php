@@ -11,21 +11,27 @@ class SpeakerInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
+                TextEntry::make('name')
+                    ->label(__('Name')),
                 TextEntry::make('bio')
                     ->placeholder('-')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Bio')),
                 TextEntry::make('photo')
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Photo')),
                 TextEntry::make('social_links')
                     ->placeholder('-')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Social links')),
                 TextEntry::make('created_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Created at')),
                 TextEntry::make('updated_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Updated at')),
             ]);
     }
 }

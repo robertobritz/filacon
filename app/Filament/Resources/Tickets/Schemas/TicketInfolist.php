@@ -13,30 +13,40 @@ class TicketInfolist
         return $schema
             ->components([
                 TextEntry::make('event.name')
-                    ->label('Event'),
-                TextEntry::make('name'),
+                    ->label(__('Event')),
+                TextEntry::make('name')
+                    ->label(__('Name')),
                 TextEntry::make('description')
                     ->placeholder('-')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Description')),
                 TextEntry::make('price')
-                    ->money(),
+                    ->money()
+                    ->label(__('Price')),
                 TextEntry::make('stock')
-                    ->numeric(),
+                    ->numeric()
+                    ->label(__('Stock')),
                 TextEntry::make('benefits')
                     ->placeholder('-')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Benefits')),
                 TextEntry::make('sort')
-                    ->numeric(),
+                    ->numeric()
+                    ->label(__('Sort')),
                 IconEntry::make('vip')
-                    ->boolean(),
+                    ->boolean()
+                    ->label(__('Vip')),
                 IconEntry::make('active')
-                    ->boolean(),
+                    ->boolean()
+                    ->label(__('Active')),
                 TextEntry::make('created_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Created at')),
                 TextEntry::make('updated_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Updated at')),
             ]);
     }
 }
