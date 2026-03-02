@@ -12,23 +12,32 @@ class EventInfolist
     {
         return $schema
             ->components([
-                TextEntry::make('name'),
-                TextEntry::make('title'),
-                TextEntry::make('slug'),
+                TextEntry::make('name')
+                    ->label(__('Name')),
+                TextEntry::make('title')
+                    ->label(__('Title')),
+                TextEntry::make('slug')
+                    ->label(__('Slug')),
                 TextEntry::make('description')
                     ->placeholder('-')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Description')),
                 ImageEntry::make('background_image')
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Background image')),
                 TextEntry::make('location')
-                    ->placeholder('-'),
-                TextEntry::make('status'),
+                    ->placeholder('-')
+                    ->label(__('Location')),
+                TextEntry::make('status')
+                    ->label(__('Status')),
                 TextEntry::make('created_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Created at')),
                 TextEntry::make('updated_at')
                     ->dateTime()
-                    ->placeholder('-'),
+                    ->placeholder('-')
+                    ->label(__('Updated at')),
             ]);
     }
 }

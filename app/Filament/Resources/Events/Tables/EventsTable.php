@@ -17,25 +17,32 @@ class EventsTable
         return $table
             ->columns([
                 TextColumn::make('name')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Name')),
                 TextColumn::make('title')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Title')),
                 TextColumn::make('slug')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Slug')),
                 ImageColumn::make('background_image')
                     ->label(__('Background image')),
                 TextColumn::make('location')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Location')),
                 TextColumn::make('status')
-                    ->searchable(),
+                    ->searchable()
+                    ->label(__('Status')),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('Created at')),
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true)
+                    ->label(__('Updated at')),
             ])
             ->filters([
                 //
