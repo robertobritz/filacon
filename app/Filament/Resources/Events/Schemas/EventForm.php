@@ -14,19 +14,26 @@ class EventForm
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->required(),
+                    ->required()
+                    ->label(__('Name')),
                 TextInput::make('title')
-                    ->required(),
+                    ->required()
+                    ->label(__('Title')),
                 TextInput::make('slug')
-                    ->required(),
+                    ->required()
+                    ->label(__('Slug')),
                 Textarea::make('description')
-                    ->columnSpanFull(),
+                    ->columnSpanFull()
+                    ->label(__('Description')),
                 FileUpload::make('background_image')
-                    ->image(),
-                TextInput::make('location'),
+                    ->image()
+                    ->label(__('Background image')),
+                TextInput::make('location')
+                    ->label(__('Location')),
                 TextInput::make('status')
                     ->required()
-                    ->default('active'),
+                    ->default('active')
+                    ->label(__('Status')),
             ]);
     }
 }

@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Filament\Resources\FileGeneration\Resource;
+namespace App\Filament\Commands\FileGenerators\Resource;
 
 use Filament\Commands\FileGenerators\Resources\Schemas\ResourceTableClassGenerator;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Illuminate\Support\Str;
 use Nette\PhpGenerator\Literal;
-use Pest\Support\Str;
 
 class CustomResourceTableClassGenerator extends ResourceTableClassGenerator
 {
-public function getTableColumns(?string $model = null, array $exceptColumns = []): array
+    public function getTableColumns(?string $model = null, array $exceptColumns = []): array
     {
         if (! $this->isGenerated()) {
             return [];
@@ -164,13 +164,13 @@ public function getTableColumns(?string $model = null, array $exceptColumns = []
             }
 
             $label = str($columnName)
-            ->beforeLast('.')
-            ->afterLast('.')
-            ->kebab()
-            ->replace(['-', '_'], ' ')
-            ->ucfirst();
+                ->beforeLast('.')
+                ->afterLast('.')
+                ->kebab()
+                ->replace(['-', '_'], ' ')
+                ->ucfirst();
 
-            $columnData['label'] = [ new Literal(<<<PHP
+            $columnData['label'] = [new Literal(<<<PHP
                 __('$label')
             PHP)];
 
@@ -195,5 +195,4 @@ public function getTableColumns(?string $model = null, array $exceptColumns = []
             array_keys($columns),
         );
     }
-
 }

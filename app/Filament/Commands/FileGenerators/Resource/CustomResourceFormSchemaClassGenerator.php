@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\FileGeneration\Resource;
+namespace App\Filament\Commands\FileGenerators\Resource;
 
 use Filament\Commands\FileGenerators\Resources\Schemas\ResourceFormSchemaClassGenerator;
 use Filament\Forms\Components\DatePicker;
@@ -194,6 +194,7 @@ class CustomResourceFormSchemaClassGenerator extends ResourceFormSchemaClassGene
             if ($componentData['type'] === Textarea::class) {
                 $componentData['columnSpanFull'] = [];
             }
+
             $label = str($componentName)
                 ->beforeLast('.')
                 ->afterLast('.')

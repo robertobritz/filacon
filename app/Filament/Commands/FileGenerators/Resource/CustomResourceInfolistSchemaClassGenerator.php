@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\FileGeneration\Resource;
+namespace App\Filament\Commands\FileGenerators\Resource;
 
 use Filament\Commands\FileGenerators\Resources\Schemas\ResourceInfolistSchemaClassGenerator;
 use Filament\Infolists\Components\IconEntry;
@@ -160,7 +160,7 @@ class CustomResourceInfolistSchemaClassGenerator extends ResourceInfolistSchemaC
                 ->replace(['-', '_'], ' ')
                 ->ucfirst();
 
-            $componentData['label'] = [ new Literal(<<<PHP
+            $componentData['label'] = [new Literal(<<<PHP
                 __('$label')
             PHP)];
 

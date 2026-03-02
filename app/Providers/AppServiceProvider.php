@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use App\Filament\Resources\FileGeneration\Resource\CustomResourceInfolistSchemaClassGenerator;
-use App\Filament\Resources\FileGeneration\Resource\CustomResourceTableClassGenerator;
+use App\Filament\Commands\FileGenerators\Resource\CustomResourceFormSchemaClassGenerator;
+use App\Filament\Commands\FileGenerators\Resource\CustomResourceInfolistSchemaClassGenerator;
+use App\Filament\Commands\FileGenerators\Resource\CustomResourceTableClassGenerator;
 use Filament\Commands\FileGenerators\Resources\Schemas\ResourceFormSchemaClassGenerator;
 use Filament\Commands\FileGenerators\Resources\Schemas\ResourceInfolistSchemaClassGenerator;
 use Filament\Commands\FileGenerators\Resources\Schemas\ResourceTableClassGenerator;
@@ -26,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(ResourceTableClassGenerator::class, CustomResourceTableClassGenerator::class);
         $this->app->bind(ResourceInfolistSchemaClassGenerator::class, CustomResourceInfolistSchemaClassGenerator::class);
-        $this->app->bind(ResourceFormSchemaClassGenerator::class, ResourceFormSchemaClassGenerator::class);
+        $this->app->bind(ResourceFormSchemaClassGenerator::class, CustomResourceFormSchemaClassGenerator::class);
     }
 }
