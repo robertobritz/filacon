@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Casts\MoneyCast;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -41,6 +42,7 @@ class Order extends Model
             'user_id' => 'integer',
             'payment_qr_code_expiration_date' => 'datetime',
             'paid_at' => 'datetime',
+            'total_amount' => MoneyCast::class,
         ];
     }
 
