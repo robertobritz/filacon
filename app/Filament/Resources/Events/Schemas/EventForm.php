@@ -14,6 +14,8 @@ class EventForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Event Name')
+                    ->maxLength(10)
                     ->required(),
                 TextInput::make('title')
                     ->required(),
@@ -22,6 +24,7 @@ class EventForm
                 Textarea::make('description')
                     ->columnSpanFull(),
                 FileUpload::make('background_image')
+                    ->label(__('Background image'))
                     ->image(),
                 TextInput::make('location'),
                 TextInput::make('status')

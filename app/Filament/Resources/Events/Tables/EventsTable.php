@@ -22,7 +22,8 @@ class EventsTable
                     ->searchable(),
                 TextColumn::make('slug')
                     ->searchable(),
-                ImageColumn::make('background_image'),
+                ImageColumn::make('background_image')
+                    ->label(__('Background image')),
                 TextColumn::make('location')
                     ->searchable(),
                 TextColumn::make('status')
